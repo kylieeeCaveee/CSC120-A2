@@ -1,3 +1,4 @@
+from typing import Dict, Optional
 class Computer:
     #This is the computer class- it has the attributes: desciption, processor_type, hard_drive_capactiy, 
     # memory, operating_system, year_made, price. It contains the methods update_price, update_OS, 
@@ -13,7 +14,7 @@ class Computer:
    
     # How will you set up your constructor?
     # Remember: in python, all constructors have the same name (__init__)
-    def __init__(des:str, pt:str, hdc: int, mem: int, os: str, ym:int, p: int):
+    def __init__(self, des:str, pt:str, hdc: int, mem: int, os: str, ym:int, p: int):
         #this initializes a new computer and all of it's corresponding variables
         self.description= des
         self.processor_type= pt
@@ -24,15 +25,15 @@ class Computer:
         self.price= p
         
     
-    def update_price(new_price: int): 
+    def update_price(self, new_price: int): 
         #this updates the price of the computer to the price given to the function
         self.price= new_price
         
-    def update_OS(new_OS: str): 
+    def update_OS(self,new_OS: str): 
         #this updates the OS of the computer to the new OS given
         self.operating_system= new_OS
 
-    def refurbish(new_os: Optional[str] = None): 
+    def refurbish(self, new_os: Optional[str] = None): 
         #this function refurbishes the computer which updates the OS and the price
         if self.year_made < 2000:
              self.price = 0 # too old to sell, donation only
@@ -46,7 +47,7 @@ class Computer:
         if new_os is not None:
              self.operating_system = new_os # update details after installing new OS
     
-    def print_details(): 
+    def print_details(self): 
         #this function prints all the attributes of a computer
         print ("Description:", self.description, "Proccessor:", self.processor, "Hard Drive Capacity:", self.hard_drive_capacity, "Memory", self.memory, "Operating System:", self.operating_system, "Year:", self.year_made, "Price:", self.price)
 
